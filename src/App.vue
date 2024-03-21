@@ -8,7 +8,6 @@ import ReviewComments from './components/ReviewComments.vue'
 
 const _isLoading = ref(false);
 const reviewData = ref({});
-const num = ref(5)
 const starurl = ref("./src/assets/images/icon-star.svg")
 
 const fetchData = async () => {
@@ -31,14 +30,14 @@ onMounted(() => fetchData())
 
 <template>
   <div>
-    <div>
+    <div class="heading-container">
       <Heading />
     </div>
 
     <div v-if="_isLoading">
       <Loading />
     </div>
-    <div v-else>
+    <div v-else class="rating-container">
       <StarRating :iconurl="starurl" v-for="(rating, index) in reviewData.ratings" :key="index">
         <template #rating>
           <p>{{ rating }}</p>
@@ -46,10 +45,8 @@ onMounted(() => fetchData())
       </StarRating>
     </div>
   </div>
-  <div>
+  <div class="review-container">
     <ReviewComments v-for="review in reviewData.reviews" :reviewerimageurl="review.reviewer_image"
       :reviewername="review.reviewer_name" :reviewerstatus="review.status" :review="review.review" />
   </div>
 </template>
-
-<style scoped></style>
