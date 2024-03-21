@@ -1,0 +1,55 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+import Heading from "./components/Heading.vue"
+import Loading from './components/Loading.vue'
+import StarRating from './components/StarRating.vue'
+import ReviewComments from './components/ReviewComments.vue'
+
+
+const _isLoading = ref(false);
+const reviewData = ref({});
+const num = ref(5)
+const starurl = ref("./src/assets/images/icon-star.svg")
+
+const fetchData = async () => {
+  try {
+    const response = await fetch("./db/data.json");
+    if (!response.ok) {
+      throw new Error("Network response was not OK")
+    }
+    const reviews = await response.json();
+    reviewData.value = reviews;
+    _isLoading.value = false;
+  } catch (error) {
+    console.warn("Error fetching data:", error)
+  }
+}
+
+onMounted(() => fetchData())
+
+</script>
+
+<template>
+  <div>
+    <div>
+      <Heading />
+    </div>
+
+    <div v-if="_isLoading">
+      <Loading />
+    </div>
+    <div v-else>
+      <StarRating :iconurl="starurl" v-for="(rating, index) in reviewData.ratings" :key="index">
+        <template #rating>
+          <p>{{ rating }}</p>
+        </template>
+      </StarRating>
+    </div>
+  </div>
+  <div>
+    <ReviewComments v-for="review in reviewData.reviews" :reviewerimageurl="review.reviewer_image"
+      :reviewername="review.reviewer_name" :reviewerstatus="review.status" :review="review.review" />
+  </div>
+</template>
+
+<style scoped></style>
