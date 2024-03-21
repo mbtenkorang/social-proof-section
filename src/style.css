@@ -166,7 +166,7 @@ footer a:hover {
   color: #535bf2;
 }
 
-div.heading-container {
+div.title-container {
   display: flex;
   flex-direction: column;
   place-content: center;
@@ -269,7 +269,7 @@ body {
   place-items: center;
   min-height: 100vh;
   /* background */
-  background-image: url("./assets/images/bg-pattern-top-mobile.svg"), url("./assets/images/bg-pattern-bottom-mobile.svg");
+  background-image: url("/assets/images/bg-pattern-top-mobile.svg"), url("/assets/images/bg-pattern-bottom-mobile.svg");
   background-repeat: no-repeat;
   background-position: top left, bottom right;
   background-size: 100%, 100%;
