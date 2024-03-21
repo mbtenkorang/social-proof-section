@@ -27,6 +27,6 @@ const props = defineProps({
                 <p>{{ reviewerstatus }}</p>
             </div>
         </div>
-        <p>"{{ review }}"</p>
+        <p>" {{ review }} "</p>
     </article>
 </template>
