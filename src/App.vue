@@ -8,7 +8,7 @@ import ReviewComments from './components/ReviewComments.vue'
 
 const _isLoading = ref(false);
 const reviewData = ref({});
-const starurl = ref("./src/assets/images/icon-star.svg")
+const starurl = ref("/assets/images/icon-star.svg")
 
 const fetchData = async () => {
   try {
@@ -30,7 +30,7 @@ onMounted(() => fetchData())
 
 <template>
   <div>
-    <div class="heading-container">
+    <div class="title-container">
       <Heading />
     </div>
 
