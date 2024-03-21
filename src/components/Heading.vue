@@ -7,6 +7,3 @@
         See what our satisfied customers are saying about our services.
     </p>
 </template>
-
-
-  
