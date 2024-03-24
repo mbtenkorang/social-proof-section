@@ -46,7 +46,8 @@ onMounted(() => fetchData())
     </div>
   </div>
   <div class="review-container">
-    <ReviewComments v-for="{reviewer_name,reviewer_image,status,review} in reviewData.reviews"
-      :reviewerimageurl="reviewer_image" :reviewername="reviewer_name" :reviewerstatus="status" :review="review" />
+    <ReviewComments v-for="{id,reviewer_name,reviewer_image,status,review} in reviewData.reviews"
+      :reviewerimageurl="reviewer_image" :reviewername="reviewer_name" :reviewerstatus="status" :review="review"
+      :key="id" />
   </div>
 </template>
