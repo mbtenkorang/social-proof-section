@@ -6,7 +6,6 @@ import StarRating from './components/StarRating.vue'
 import ReviewComments from './components/ReviewComments.vue'
 
 
-const _isLoading = ref(false);
 const reviewData = ref({});
 const starurl = ref("/assets/images/icon-star.svg")
 
@@ -18,7 +17,7 @@ const fetchData = async () => {
     }
     const reviews = await response.json();
     reviewData.value = reviews;
-    _isLoading.value = false;
+
   } catch (error) {
     console.warn("Error fetching data:", error)
   }
@@ -34,10 +33,7 @@ onMounted(() => fetchData())
       <Heading />
     </div>
 
-    <div v-if="_isLoading">
-      <Loading />
-    </div>
-    <div v-else class="rating-container">
+    <div class="rating-container">
       <StarRating :iconurl="starurl" v-for="(rating, index) in reviewData.ratings" :key="index">
         <template #rating>
           <p>{{ rating }}</p>
@@ -45,6 +41,7 @@ onMounted(() => fetchData())
       </StarRating>
     </div>
   </div>
+
   <div class="review-container">
     <ReviewComments v-for="{id,reviewer_name,reviewer_image,status,review} in reviewData.reviews"
       :reviewerimageurl="reviewer_image" :reviewername="reviewer_name" :reviewerstatus="status" :review="review"
