@@ -127,13 +127,6 @@ img {
   display: block;
 }
 
-
-ins {
-  background-color: var(--highlight-color);
-  color: #000;
-  text-decoration: none;
-}
-
 mark {
   background-color: var(--highlight-color);
   color: #000;
@@ -290,11 +283,23 @@ main {
     max-width: 80%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  div.title-container {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 4rem;
+    line-height: .8;
   }
 
   h1,
   h1+p {
     text-align: left;
+    max-width: 75%;
   }
 
   div.header {
@@ -304,20 +309,61 @@ main {
     column-gap: 2em;
   }
 
+  div.rating-container {
+    display: grid;
+    align-items: center;
+    align-content: center;
+  }
+
+  :nth-child(1 of div.rating) {
+    justify-self: flex-start;
+  }
+
+  :nth-child(2 of div.rating) {
+    justify-self: center;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  :nth-child(3 of div.rating) {
+    justify-self: flex-end;
+  }
+
   div.rating {
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 0 0;
-    padding-top: .75em;
-    padding-bottom: .75em;
+    padding: 1em 3.5em 1em 2em;
+  }
+
+  div.stars {
+    margin-right: 1.75em;
+    margin-bottom: 0;
   }
 
   div.review-container {
     grid-column: 1/span 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     column-gap: 1em;
   }
 
+  article {
+    margin-bottom: 0;
+    padding: 3em 2em;
+  }
+
+  :nth-child(1 of article) {
+    grid-row: 1/span 9;
+  }
+
+  :nth-child(2 of article) {
+    grid-row: 2/11;
+  }
+
+  :nth-child(3 of article) {
+    grid-row: 3/12;
+  }
 }
