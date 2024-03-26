@@ -12,7 +12,7 @@ const props = defineProps({
 
 <template>
     <div class="rating">
-        <div><img v-for="i in num" :src="iconurl" alt="" aria-hidden="true" :key="i"></div>
+        <div class="stars"><img v-for="i in num" :src="iconurl" alt="" aria-hidden="true" :key="i"></div>
         <slot name="rating" />
     </div>
 </template>
