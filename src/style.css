@@ -193,10 +193,6 @@ p {
   line-height: 1.1;
 }
 
-.rating-container {
-  min-height: 30vh;
-}
-
 div.rating {
   display: flex;
   flex-direction: column;
