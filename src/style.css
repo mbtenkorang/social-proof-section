@@ -352,7 +352,7 @@ main {
 
   article {
     margin-bottom: 0;
-    padding: 3em 2em;
+    padding: 2.5em 2em;
   }
 
   :nth-child(1 of article) {
