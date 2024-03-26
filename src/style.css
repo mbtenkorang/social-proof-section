@@ -49,16 +49,6 @@ summary {
   background: transparent;
 }
 
-main,
-article,
-footer,
-header,
-section,
-details,
-summary {
-  display: block;
-}
-
 html {
   box-sizing: border-box;
 }
@@ -285,6 +275,7 @@ main {
     grid-template-rows: repeat(2, 1fr);
     padding-top: 0;
     padding-bottom: 0;
+    height: 80vh;
   }
 
   div.title-container {
