@@ -49,16 +49,6 @@ summary {
   background: transparent;
 }
 
-main,
-article,
-footer,
-header,
-section,
-details,
-summary {
-  display: block;
-}
-
 html {
   box-sizing: border-box;
 }
@@ -285,6 +275,7 @@ main {
     grid-template-rows: repeat(2, 1fr);
     padding-top: 0;
     padding-bottom: 0;
+    height: 80vh;
   }
 
   div.title-container {
@@ -353,7 +344,8 @@ main {
 
   article {
     margin-bottom: 0;
-    padding: 2.5em 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
 
   :nth-child(1 of article) {
