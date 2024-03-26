@@ -280,6 +280,7 @@ main {
 
   div.title-container {
     justify-content: center;
+    margin-bottom: 0;
   }
 
   h1 {
@@ -297,7 +298,6 @@ main {
     grid-column: 1/span 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 2em;
   }
 
   div.rating-container {
@@ -337,8 +337,9 @@ main {
     grid-column: 1/span 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(11, 1fr);
     column-gap: 1em;
+    margin: 0 0;
   }
 
   article {
