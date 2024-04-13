@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import Heading from "./components/Heading.vue"
-import Loading from './components/Loading.vue'
 import StarRating from './components/StarRating.vue'
 import ReviewComments from './components/ReviewComments.vue'
 
