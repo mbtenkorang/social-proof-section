@@ -139,7 +139,6 @@ footer {
 
 footer a {
   font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
 }
 
@@ -231,13 +230,13 @@ article>div {
   margin-bottom: 2em;
 }
 
-article h3 {
+article h2 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: .2em;
 }
 
-article h3~p {
+article h2~p {
   color: var(--softpink);
 }
 
