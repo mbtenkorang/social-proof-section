@@ -23,7 +23,7 @@ const props = defineProps({
         <div>
             <img :src="reviewerimageurl" :alt="`Photo of ${reviewername}`">
             <div>
-                <h3>{{ reviewername }}</h3>
+                <h2>{{ reviewername }}</h2>
                 <p>{{ reviewerstatus }}</p>
             </div>
         </div>
